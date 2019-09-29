@@ -26,14 +26,14 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[])
 
         node* new_node = malloc(sizeof(node));
 	while(fscanf(fp, "%s", new_node->word)!=EOF)
+	 //read the line
+	 //split the line on spaces
+         //For each word in line:
    
 	{
             //new_node = malloc(sizeof(node));
 		//wordcheck = new_node->word;
 		//printf("The word being checked is %s\n",new_node->word);
-	 //read the line
-	 //split the line on spaces
-         //For each word in line:
 		//printf("fscanf word: %s\n",new_node->word);
 
 	      if (new_node->word != NULL)
@@ -41,8 +41,9 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[])
 		//int len1 = strlen(new_node->word);
 		char* newString;
 		//char* newString2[len1+1];
-		newString= strtok(new_node->word, " ,.-");
+		//newString= strtok(new_node->word, " ,.-");
 		//newString= strtok(new_node->word, " ,-");
+		newString= strtok(new_node->word, " ");
 		while (newString!=NULL)
 		 {
 		//printf("strok word: %s\n",newString);
@@ -52,6 +53,17 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[])
 		  if (strlen(newString) <= LENGTH)
 		  {
 		   //newString2[len1] - '\0';
+
+//pjc
+    int word_length2 = strlen(newString);
+    if (ispunct(newString[word_length2-1]))
+	{
+	   //printf ("word-out:%s\n", newString);
+	   newString[word_length2-1] = '\0';
+	}
+//pjc
+
+
 		   if (check_word(newString, hashtable) == false)
   	             //If not check_word(word):
 		   {
@@ -73,7 +85,8 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[])
 		   } else {
 			num_misspelled += 1;
 		   }
-		   newString= strtok(NULL, " ,.-");
+		   //newString= strtok(NULL, " ,.-");
+		   newString= strtok(NULL, " ");
 		  }
 
 	       }
@@ -164,10 +177,12 @@ bool check_word(const char* word, hashmap_t hashtable[])
 
     int word_length = strlen(word);
     char lower_word[LENGTH+1];
-    
+    char reg_word[LENGTH+1];    
+
     // Convert word to lowercase to accurately compare to hash table.
     for (int i = 0; i < word_length; i++)
     {
+	reg_word[i] = word[i];
         // If character is uppercase, make it lowercase.
         if(isupper(word[i]))
         {
@@ -179,8 +194,28 @@ bool check_word(const char* word, hashmap_t hashtable[])
             lower_word[i] = word[i];
         }
     }    
+
+    if (ispunct(word[word_length-1]))
+	{
+	   //printf ("word:%s\n", word);
+	   reg_word[word_length-1] = '\0';
+	}
+    if (ispunct(word[0]))
+	{
+	 //printf ("word:%s\n", word);
+	 for (int i = 0; i < word_length; i++)
+	   {
+		reg_word[i] = word[i+1];
+
+	   }
+	 reg_word[word_length-1] = '\0';
+	}
+
+
+
     // Add null character to end of char array.
     lower_word[word_length] = '\0';
+    reg_word[word_length] = '\0';
     // Use hash function to find correct "bucket" to place word.
     int bucket = hash_function(lower_word);
     // Set cursor to first node in bucket.
@@ -198,6 +233,17 @@ bool check_word(const char* word, hashmap_t hashtable[])
             return true;
         }
         cursor = cursor->next;
+    }
+
+    int bucket2 = hash_function(reg_word);
+    node* cursor2 = hashtable[bucket2];   
+    while (cursor2 != NULL)
+    {
+        if (strcmp(reg_word, cursor2->word) == 0)
+        {
+            return true;
+        }
+        cursor2 = cursor2->next;
     }
     
     return false;
