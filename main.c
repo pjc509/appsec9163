@@ -3,7 +3,9 @@
 #include "dictionary.h"
 #include <check.h>
 
-#define DICTIONARY "wordlist1.txt"
+//#define DICTIONARY "wordlist1.txt"
+#define DICTIONARY "wordlist.txt"
+//#define TESTDOC "test_w.txt"
 #define TESTDOC "test_w.txt"
 
 int main()
@@ -21,7 +23,8 @@ int main()
     check_word(incorrect_word, hashtable);
 
     char *misspelled[MAX_MISSPELLED];
-    FILE *fp = fopen("test_w.txt", "r");
+    //FILE *fp = fopen("test_w.txt", "r");
+    FILE *fp = fopen("2cities1.txt", "r");
     int num_misspelled = check_words(fp, hashtable, misspelled);
     printf("Misspelled words: %d\n",num_misspelled);
     for (int i = 0; i < num_misspelled; i++)
