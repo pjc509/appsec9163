@@ -1,0 +1,538 @@
+==1644== Memcheck, a memory error detector
+==1644== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1644== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1644== Command: ./test_main
+==1644== 
+Running suite(s): check_word
+==1645== 
+==1645== FILE DESCRIPTORS: 4 open at exit.
+==1645== Open file descriptor 3: ./check_3ClX6x
+==1645==    at 0x4D0DDDE: open (open64.c:47)
+==1645==    by 0x4C90E12: __gen_tempname (tempname.c:261)
+==1645==    by 0x10C1E5: open_tmp_file (in /root/App_Sec/test_main)
+==1645==    by 0x10C28B: setup_pipe (in /root/App_Sec/test_main)
+==1645==    by 0x10D430: srunner_run (in /root/App_Sec/test_main)
+==1645==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== Open file descriptor 2: /root/App_Sec/val_output2.out
+==1645==    <inherited from parent>
+==1645== 
+==1645== Open file descriptor 1: /root/App_Sec/val_output2.out
+==1645==    <inherited from parent>
+==1645== 
+==1645== Open file descriptor 0: /dev/pts/0
+==1645==    <inherited from parent>
+==1645== 
+==1645== 
+==1645== HEAP SUMMARY:
+==1645==     in use at exit: 6,897,212 bytes in 123,171 blocks
+==1645==   total heap usage: 123,187 allocs, 16 frees, 6,910,297 bytes allocated
+==1645== 
+==1645== 8 bytes in 1 blocks are still reachable in loss record 1 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B09B: suite_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA2B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 8 bytes in 1 blocks are still reachable in loss record 2 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B254: tcase_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 8 bytes in 1 blocks are still reachable in loss record 3 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B25D: tcase_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 8 bytes in 1 blocks are still reachable in loss record 4 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B266: tcase_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 8 bytes in 1 blocks are still reachable in loss record 5 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B26F: tcase_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 8 bytes in 1 blocks are still reachable in loss record 6 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B6BA: srunner_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 8 bytes in 1 blocks are still reachable in loss record 7 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B6F4: srunner_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 8 bytes in 1 blocks are still reachable in loss record 8 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10EABF: srunner_init_logging (in /root/App_Sec/test_main)
+==1645==    by 0x10D43D: srunner_run (in /root/App_Sec/test_main)
+==1645==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 12 bytes in 1 blocks are still reachable in loss record 9 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10B6D7: srunner_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 16 bytes in 1 blocks are still reachable in loss record 10 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10B082: suite_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA2B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 16 bytes in 1 blocks are still reachable in loss record 11 of 28
+==1645==    at 0x4837D7B: realloc (vg_replace_malloc.c:836)
+==1645==    by 0x10BCD8: erealloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD25: maybe_grow (in /root/App_Sec/test_main)
+==1645==    by 0x10BDD5: check_list_add_end (in /root/App_Sec/test_main)
+==1645==    by 0x10AAA5: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 24 bytes in 1 blocks are still reachable in loss record 12 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B09B: suite_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA2B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 24 bytes in 1 blocks are still reachable in loss record 13 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B24B: tcase_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 24 bytes in 1 blocks are still reachable in loss record 14 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B254: tcase_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 24 bytes in 1 blocks are still reachable in loss record 15 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B25D: tcase_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 24 bytes in 1 blocks are still reachable in loss record 16 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B266: tcase_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 24 bytes in 1 blocks are still reachable in loss record 17 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B26F: tcase_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 24 bytes in 1 blocks are still reachable in loss record 18 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B6BA: srunner_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 24 bytes in 1 blocks are still reachable in loss record 19 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10B6F4: srunner_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 24 bytes in 1 blocks are still reachable in loss record 20 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1645==    by 0x10EABF: srunner_init_logging (in /root/App_Sec/test_main)
+==1645==    by 0x10D43D: srunner_run (in /root/App_Sec/test_main)
+==1645==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 24 bytes in 1 blocks are still reachable in loss record 21 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10E875: srunner_register_lfun (in /root/App_Sec/test_main)
+==1645==    by 0x10EAE7: srunner_init_logging (in /root/App_Sec/test_main)
+==1645==    by 0x10D43D: srunner_run (in /root/App_Sec/test_main)
+==1645==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 32 bytes in 1 blocks are still reachable in loss record 22 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10B347: _tcase_add_test (in /root/App_Sec/test_main)
+==1645==    by 0x10AA70: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 32 bytes in 1 blocks are still reachable in loss record 23 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10B347: _tcase_add_test (in /root/App_Sec/test_main)
+==1645==    by 0x10AAA5: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 64 bytes in 1 blocks are still reachable in loss record 24 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10B142: tcase_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1645==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 64 bytes in 1 blocks are still reachable in loss record 25 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1645==    by 0x10B6B2: srunner_create (in /root/App_Sec/test_main)
+==1645==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 552 bytes in 1 blocks are still reachable in loss record 26 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x4C934BB: fdopen@@GLIBC_2.2.5 (iofdopen.c:122)
+==1645==    by 0x10C1F7: open_tmp_file (in /root/App_Sec/test_main)
+==1645==    by 0x10C28B: setup_pipe (in /root/App_Sec/test_main)
+==1645==    by 0x10D430: srunner_run (in /root/App_Sec/test_main)
+==1645==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 6,790,560 bytes in 121,260 blocks are indirectly lost in loss record 27 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10ACE7: load_dictionary (in /root/App_Sec/test_main)
+==1645==    by 0x10A583: test_check_word_normal (in /root/App_Sec/test_main)
+==1645==    by 0x10DBE5: srunner_run (in /root/App_Sec/test_main)
+==1645==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== 6,896,120 (105,560 direct, 6,790,560 indirect) bytes in 1,885 blocks are definitely lost in loss record 28 of 28
+==1645==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1645==    by 0x10ACE7: load_dictionary (in /root/App_Sec/test_main)
+==1645==    by 0x10A583: test_check_word_normal (in /root/App_Sec/test_main)
+==1645==    by 0x10DBE5: srunner_run (in /root/App_Sec/test_main)
+==1645==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1645== 
+==1645== LEAK SUMMARY:
+==1645==    definitely lost: 105,560 bytes in 1,885 blocks
+==1645==    indirectly lost: 6,790,560 bytes in 121,260 blocks
+==1645==      possibly lost: 0 bytes in 0 blocks
+==1645==    still reachable: 1,092 bytes in 26 blocks
+==1645==         suppressed: 0 bytes in 0 blocks
+==1645== 
+==1645== For lists of detected and suppressed errors, rerun with: -s
+==1645== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+word:?JuS?TIce?
+==1646== 
+==1646== FILE DESCRIPTORS: 4 open at exit.
+==1646== Open file descriptor 3: ./check_by1IRv
+==1646==    at 0x4D0DDDE: open (open64.c:47)
+==1646==    by 0x4C90E12: __gen_tempname (tempname.c:261)
+==1646==    by 0x10C1E5: open_tmp_file (in /root/App_Sec/test_main)
+==1646==    by 0x10C28B: setup_pipe (in /root/App_Sec/test_main)
+==1646==    by 0x10C2EC: receive_test_result (in /root/App_Sec/test_main)
+==1646==    by 0x10D871: srunner_run (in /root/App_Sec/test_main)
+==1646==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== Open file descriptor 2: /root/App_Sec/val_output2.out
+==1646==    <inherited from parent>
+==1646== 
+==1646== Open file descriptor 1: /root/App_Sec/val_output2.out
+==1646==    <inherited from parent>
+==1646== 
+==1646== Open file descriptor 0: /dev/pts/0
+==1646==    <inherited from parent>
+==1646== 
+==1646== 
+==1646== HEAP SUMMARY:
+==1646==     in use at exit: 6,897,287 bytes in 123,174 blocks
+==1646==   total heap usage: 123,201 allocs, 27 frees, 6,923,436 bytes allocated
+==1646== 
+==1646== 7 bytes in 1 blocks are still reachable in loss record 1 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10CD6D: pass_msg (in /root/App_Sec/test_main)
+==1646==    by 0x10D9DA: srunner_run (in /root/App_Sec/test_main)
+==1646==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 8 bytes in 1 blocks are still reachable in loss record 2 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B09B: suite_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA2B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 8 bytes in 1 blocks are still reachable in loss record 3 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B254: tcase_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 8 bytes in 1 blocks are still reachable in loss record 4 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B25D: tcase_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 8 bytes in 1 blocks are still reachable in loss record 5 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B266: tcase_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 8 bytes in 1 blocks are still reachable in loss record 6 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B26F: tcase_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 8 bytes in 1 blocks are still reachable in loss record 7 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B6BA: srunner_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 8 bytes in 1 blocks are still reachable in loss record 8 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B6F4: srunner_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 8 bytes in 1 blocks are still reachable in loss record 9 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD54: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10EABF: srunner_init_logging (in /root/App_Sec/test_main)
+==1646==    by 0x10D43D: srunner_run (in /root/App_Sec/test_main)
+==1646==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 12 bytes in 1 blocks are still reachable in loss record 10 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10B6D7: srunner_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 12 bytes in 1 blocks are still reachable in loss record 11 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x4CABEF9: strdup (strdup.c:42)
+==1646==    by 0x10CC88: punpack (in /root/App_Sec/test_main)
+==1646==    by 0x10C2D6: receive_test_result (in /root/App_Sec/test_main)
+==1646==    by 0x10D871: srunner_run (in /root/App_Sec/test_main)
+==1646==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 16 bytes in 1 blocks are still reachable in loss record 12 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10B082: suite_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA2B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 16 bytes in 1 blocks are still reachable in loss record 13 of 31
+==1646==    at 0x4837D7B: realloc (vg_replace_malloc.c:836)
+==1646==    by 0x10BCD8: erealloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD25: maybe_grow (in /root/App_Sec/test_main)
+==1646==    by 0x10BDD5: check_list_add_end (in /root/App_Sec/test_main)
+==1646==    by 0x10AAA5: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 24 bytes in 1 blocks are still reachable in loss record 14 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B09B: suite_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA2B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 24 bytes in 1 blocks are still reachable in loss record 15 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B24B: tcase_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 24 bytes in 1 blocks are still reachable in loss record 16 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B254: tcase_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 24 bytes in 1 blocks are still reachable in loss record 17 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B25D: tcase_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 24 bytes in 1 blocks are still reachable in loss record 18 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B266: tcase_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 24 bytes in 1 blocks are still reachable in loss record 19 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B26F: tcase_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 24 bytes in 1 blocks are still reachable in loss record 20 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B6BA: srunner_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 24 bytes in 1 blocks are still reachable in loss record 21 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10B6F4: srunner_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 24 bytes in 1 blocks are still reachable in loss record 22 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10BD3A: check_list_create (in /root/App_Sec/test_main)
+==1646==    by 0x10EABF: srunner_init_logging (in /root/App_Sec/test_main)
+==1646==    by 0x10D43D: srunner_run (in /root/App_Sec/test_main)
+==1646==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 24 bytes in 1 blocks are still reachable in loss record 23 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10E875: srunner_register_lfun (in /root/App_Sec/test_main)
+==1646==    by 0x10EAE7: srunner_init_logging (in /root/App_Sec/test_main)
+==1646==    by 0x10D43D: srunner_run (in /root/App_Sec/test_main)
+==1646==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 32 bytes in 1 blocks are still reachable in loss record 24 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10B347: _tcase_add_test (in /root/App_Sec/test_main)
+==1646==    by 0x10AA70: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 32 bytes in 1 blocks are still reachable in loss record 25 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10B347: _tcase_add_test (in /root/App_Sec/test_main)
+==1646==    by 0x10AAA5: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 56 bytes in 1 blocks are still reachable in loss record 26 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10B84D: tr_create (in /root/App_Sec/test_main)
+==1646==    by 0x10C2F1: receive_test_result (in /root/App_Sec/test_main)
+==1646==    by 0x10D871: srunner_run (in /root/App_Sec/test_main)
+==1646==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 64 bytes in 1 blocks are still reachable in loss record 27 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10B142: tcase_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AA3B: check_word_suite (in /root/App_Sec/test_main)
+==1646==    by 0x10AACF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 64 bytes in 1 blocks are still reachable in loss record 28 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10BCA8: emalloc (in /root/App_Sec/test_main)
+==1646==    by 0x10B6B2: srunner_create (in /root/App_Sec/test_main)
+==1646==    by 0x10AADF: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 552 bytes in 1 blocks are still reachable in loss record 29 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x4C934BB: fdopen@@GLIBC_2.2.5 (iofdopen.c:122)
+==1646==    by 0x10C1F7: open_tmp_file (in /root/App_Sec/test_main)
+==1646==    by 0x10C28B: setup_pipe (in /root/App_Sec/test_main)
+==1646==    by 0x10C2EC: receive_test_result (in /root/App_Sec/test_main)
+==1646==    by 0x10D871: srunner_run (in /root/App_Sec/test_main)
+==1646==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 6,790,560 bytes in 121,260 blocks are indirectly lost in loss record 30 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10ACE7: load_dictionary (in /root/App_Sec/test_main)
+==1646==    by 0x10A78B: test_check_mixed_case (in /root/App_Sec/test_main)
+==1646==    by 0x10DBE5: srunner_run (in /root/App_Sec/test_main)
+==1646==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== 6,896,120 (105,560 direct, 6,790,560 indirect) bytes in 1,885 blocks are definitely lost in loss record 31 of 31
+==1646==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==1646==    by 0x10ACE7: load_dictionary (in /root/App_Sec/test_main)
+==1646==    by 0x10A78B: test_check_mixed_case (in /root/App_Sec/test_main)
+==1646==    by 0x10DBE5: srunner_run (in /root/App_Sec/test_main)
+==1646==    by 0x10AAF4: main (in /root/App_Sec/test_main)
+==1646== 
+==1646== LEAK SUMMARY:
+==1646==    definitely lost: 105,560 bytes in 1,885 blocks
+==1646==    indirectly lost: 6,790,560 bytes in 121,260 blocks
+==1646==      possibly lost: 0 bytes in 0 blocks
+==1646==    still reachable: 1,167 bytes in 29 blocks
+==1646==         suppressed: 0 bytes in 0 blocks
+==1646== 
+==1646== For lists of detected and suppressed errors, rerun with: -s
+==1646== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+100%: Checks: 2, Failures: 0, Errors: 0
+==1644== 
+==1644== FILE DESCRIPTORS: 3 open at exit.
+==1644== Open file descriptor 2: /root/App_Sec/val_output2.out
+==1644==    <inherited from parent>
+==1644== 
+==1644== Open file descriptor 1: /root/App_Sec/val_output2.out
+==1644==    <inherited from parent>
+==1644== 
+==1644== Open file descriptor 0: /dev/pts/0
+==1644==    <inherited from parent>
+==1644== 
+==1644== 
+==1644== HEAP SUMMARY:
+==1644==     in use at exit: 0 bytes in 0 blocks
+==1644==   total heap usage: 60 allocs, 60 frees, 31,698 bytes allocated
+==1644== 
+==1644== All heap blocks were freed -- no leaks are possible
+==1644== 
+==1644== For lists of detected and suppressed errors, rerun with: -s
+==1644== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
