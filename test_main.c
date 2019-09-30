@@ -79,7 +79,7 @@ check_word_suite(void)
     check_word_case = tcase_create("Core");
     tcase_add_test(check_word_case, test_check_word_normal);
     tcase_add_test(check_word_case, test_check_mixed_case);
-    tcase_add_test(check_word_case, test_check_special_char);
+    //tcase_add_test(check_word_case, test_check_special_char);
     tcase_add_test(check_word_case, test_check_word_format);
     //tcase_add_test(check_word_case, test_check_word_buffer_overflow);
     suite_add_tcase(suite, check_word_case);
