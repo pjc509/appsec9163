@@ -1,3 +1,6 @@
+//CS-GY9163 Application Security
+//Unit Assignment 1 - spell checker system
+//Peter Crefeld
 #include "dictionary.h"
 #include "stdio.h"
 #include "string.h"
@@ -13,7 +16,6 @@
 // create a variable to count the words in a dictionary
 int word_counter = 0;
 
-
 /*   function called check_words to tie them all together
 */
 
@@ -21,8 +23,6 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[])
 {
 
 	int num_misspelled = 0;	
-	//char wordcheck[length+1];
-
 
         node* new_node = malloc(sizeof(node));
 	while(fscanf(fp, "%s", new_node->word)!=EOF)
@@ -31,56 +31,34 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[])
          //For each word in line:
    
 	{
-            //new_node = malloc(sizeof(node));
-		//wordcheck = new_node->word;
-		//printf("The word being checked is %s\n",new_node->word);
-		//printf("fscanf word: %s\n",new_node->word);
-
 	      if (new_node->word != NULL)
 	      {
-		//int len1 = strlen(new_node->word);
 		char* newString;
-		//char* newString2[len1+1];
-		//newString= strtok(new_node->word, " ,.-");
-		//newString= strtok(new_node->word, " ,-");
 		newString= strtok(new_node->word, " ");
 		while (newString!=NULL)
 		 {
-		//printf("strok word: %s\n",newString);
-
-		   //if (check_word(new_node->word, hashtable) == false)
 
 		  if (strlen(newString) <= LENGTH)
 		  {
 		   //newString2[len1] - '\0';
 
-//pjc
-    int word_length2 = strlen(newString);
-    if (ispunct(newString[word_length2-1]))
-	{
-	   //printf ("word-out:%s\n", newString);
-	   newString[word_length2-1] = '\0';
-	}
-//pjc
-
+		//pjc-add for end as well
+		    int word_length2 = strlen(newString);
+		    if (ispunct(newString[word_length2-1]))
+			{
+			   //printf ("word-out:%s\n", newString);
+			   newString[word_length2-1] = '\0';
+			}
+		//pjc
 
 		   if (check_word(newString, hashtable) == false)
   	             //If not check_word(word):
 		   {
                         //Append word to misspelled.
                         //Increment num_misspelled.
-			//misspelled[num_misspelled] = newString;
-			//strcpy(misspelled[num_misspelled],newString);
 			misspelled[num_misspelled] = malloc(strlen(newString));
 			strcpy(misspelled[num_misspelled],newString);
 	           	num_misspelled += 1;
-	//memset(misspelled[num_misspelled], 0, sizeof misspelled[num_misspelled]);
-	//misspelled[num_misspelled][sizeof(misspelled[num_misspelled])-1]='\0';
-	//strncpy(misspelled[num_misspelled],newString, sizeof(misspelled[num_misspelled])-1);
-		//printf("misspell: %s\n",newString);
-		//printf("misspell: %s\n",misspelled[num_misspelled]);
-		//printf("number: %d\n",num_misspelled);
-
 		    }
 		   } else {
 			num_misspelled += 1;
@@ -88,14 +66,11 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[])
 		   //newString= strtok(NULL, " ,.-");
 		   newString= strtok(NULL, " ");
 		  }
-
 	       }
 	}
 	//printf("Complete check_words\n");
     	return num_misspelled;
-
 }
-
 
 /*  function to load the list of words into the hash map (called load_dictionary)
 */
@@ -110,18 +85,14 @@ int number_of_words = 0;
         hashtable[i] = NULL;
     }   
 
-
    // open dictionary and check for NULL
-   //   FILE* fpdict = fopen(dictionary_file, "r");
-
 	FILE* the_dictionary;    
     	the_dictionary = fopen(dictionary_file, "r"); 
-
 
       if (the_dictionary == NULL)
          {
           //printf("Could not open %s.\n", dictionary_file);
-          //unload();
+          //unload(); - future fix
           return false;    
       }
     // read in txt file
@@ -159,22 +130,18 @@ int number_of_words = 0;
     }
       fclose(the_dictionary);
 
-        //free(new_node);
+        //free(new_node); - future fix
 	//free(newString2);
         return true;           
     }    
-
     return false;
-
 }
-
 
 /*   function to check if a word is correctly spelled (called check_word)
 */
 
 bool check_word(const char* word, hashmap_t hashtable[])
 {
-
     int word_length = strlen(word);
     char lower_word[LENGTH+1];
     char reg_word[LENGTH+1];    
@@ -195,6 +162,7 @@ bool check_word(const char* word, hashmap_t hashtable[])
         }
     }    
 
+    //Remove punctuation from beginning and end of word.
     if (ispunct(word[word_length-1]))
 	{
 	   //printf ("word:%s\n", word);
@@ -210,8 +178,6 @@ bool check_word(const char* word, hashmap_t hashtable[])
 	   }
 	 reg_word[word_length-1] = '\0';
 	}
-
-
 
     // Add null character to end of char array.
     lower_word[word_length] = '\0';
@@ -247,125 +213,5 @@ bool check_word(const char* word, hashmap_t hashtable[])
     }
     
     return false;
-
-
-/*
-    //printf("check_word: %s\n",word);
-
-    if (strlen(word) >= LENGTH)
-    {
-        return false;
-    }
-
-
-
-    //char tmp[length + 1];
-    int lenghtw = strlen(word);
-    char tmp[lenghtw + 1];
-    for (int i = 0; i < lenghtw; i++)
-    {
-        tmp[i] = tolower(word[i]);
-    }
-
-    //printf("check_word lower: %s\n",tmp);
-
-    tmp[length] = '\0';
-
-    //printf ("word:%s\n", word);
-    //printf ("tmp:%s\n", tmp);
-
-//	printf("char:%s\n", tmp[i]);
-//      if (! ispunct(tmp[i])) {
-
-
-
-    //int index = hash_function(tmp);
-    int index = hash_function(word);
-
-    //printf("check_word index: %d\n",index);
-
-
-    if (hashtable[index] == NULL)
-    {
-        //printf("Word %s \n",word);
-        //printf("spell check: false \n");
-        return false;
-    }
-    node* cursor = hashtable[index];
-
-    while(cursor != NULL)
-    {
-        //if(strcmp(tmp, cursor -> word) == 0)
-        if(strcmp(word, cursor -> word) == 0)
-        {
-            //printf("Word %s \n",cursor->word);
-            //printf("spell check: true \n");
-            return true;
-        }
-        cursor = cursor -> next;
-    }
-        //printf("Word %s \n",word);
-        //printf("spell check: false \n");
-    return false;
-
-
-
-    Remove punctuation from beginning and end of word.
-    Set int bucket to the output of hash_function(word).
-    Set hashmap_t cursor equal to hashmap[bucket].
-    While cursor is not NULL:
-        If word equals cursor->word:
-            return True.
-        Else if lower_case(word) equals curosr->word:
-            return True.
-        Set curosr to cursor->next.
-    return False.
-
-*/
-
-
 }
-
-
-
-
-
-
-/*
-//Determine the length of the word
-   int len = strlen(word);
-
-   char copy[len+1];
-
-   for (int i = 0; i < len; i++)
-   {
-       copy[i] = tolower(word[i]);
-   }
-
-   copy[len] = '\0';
-   int hashed = hash(copy) % HASH_SIZE;
-
-   node *head = hashtable[hashed];
-
-
-
-   if(head != NULL)
-   {
-       node *cursor = head;
-       // Treverse the linked list
-       while (cursor != NULL)
-       {
-        if (strcasecmp(cursor->word, word) != 0)
-        {
-            cursor = cursor->next;
-        }
-        else
-        {
-            return true;
-        }
-    }
-
-  }
-*/
-
 
